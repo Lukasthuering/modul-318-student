@@ -15,7 +15,6 @@ namespace SwissTransport
     public partial class FrmMain : Form 
     {
         private readonly ITransport mainTransport = new Transport();
-        private DateTime Date;
         public FrmMain()
         {
             InitializeComponent();
@@ -89,12 +88,13 @@ namespace SwissTransport
                 ListViewResult.Columns.Add("Nach");
                 ListViewResult.Columns.Add("Abfahrt");
                 ListViewResult.Columns.Add("Betreiber");
-
+                DateTime dtDate = this.DateTimeDate.Value;
+                DateTime dtTime = this.DateTimeClock.Value;
 
                 //In this section the Departures from one selected station will be calculated.
                 string strAbfahrt = ComboBoxStart.SelectedItem.ToString();
                 string id = mainTransport.GetStations(strAbfahrt).StationList[0].Id;
-                StationBoardRoot sbRoot = mainTransport.GetStationBoard(strAbfahrt, id);
+                StationBoardRoot sbRoot = mainTransport.GetStationBoard(strAbfahrt, id, dtDate, dtTime);
                 //In this loop, the Results for the Departures are getting calculated, and the Items will be wirtten down,
                 //to a string, then, a new ListViewItem is created and will be written down in the ListView.
                 foreach (StationBoard sb in sbRoot.Entries)
@@ -145,7 +145,7 @@ namespace SwissTransport
         //and the Timetable Button ist getting disabled.
         private void ComboBoxEnd_TextChanged(object sender, EventArgs e)
         {
-            if (ComboBoxStart.Text != "")
+            if (ComboBoxEnd.Text != "")
             {
                 BtnConnections.Enabled = true;
                 BtnTimetable.Enabled = false;
@@ -166,7 +166,7 @@ namespace SwissTransport
         {
             
             //webBrowser1.Navigate("http://www.google.com/maps/place/" + ComboBoxEnd.Text + " Haltestelle");
-            System.Diagnostics.Process.Start("http://www.google.com/maps/place?&z=15/" + ComboBoxEnd.Text + " Haltestelle");
+            System.Diagnostics.Process.Start("http://www.google.com/maps/place/" + ComboBoxEnd.Text + " Haltestelle");
         }
             //"My location" is implemented. Simple, but it works.
         private void BtnMyLocation_Click(object sender, EventArgs e)
