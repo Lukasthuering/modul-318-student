@@ -94,7 +94,7 @@ namespace SwissTransport
                 //In this section the Departures from one selected station will be calculated.
                 string strAbfahrt = ComboBoxStart.SelectedItem.ToString();
                 string id = mainTransport.GetStations(strAbfahrt).StationList[0].Id;
-                StationBoardRoot sbRoot = mainTransport.GetStationBoard(strAbfahrt, id, dtDate, dtTime);
+                StationBoardRoot sbRoot = mainTransport.GetStationBoard(strAbfahrt, id);
                 //In this loop, the Results for the Departures are getting calculated, and the Items will be wirtten down,
                 //to a string, then, a new ListViewItem is created and will be written down in the ListView.
                 foreach (StationBoard sb in sbRoot.Entries)

@@ -50,7 +50,6 @@ namespace SwissTransport
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.BtnMyLocation = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.transportBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -219,20 +218,12 @@ namespace SwissTransport
             this.BtnMyLocation.UseVisualStyleBackColor = true;
             this.BtnMyLocation.Click += new System.EventHandler(this.BtnMyLocation_Click);
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(475, 28);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(151, 23);
-            this.progressBar1.TabIndex = 14;
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(927, 632);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.BtnMyLocation);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -278,6 +269,5 @@ namespace SwissTransport
         private Label label1;
         private Label label2;
         private Button BtnMyLocation;
-        private ProgressBar progressBar1;
     }
 }
