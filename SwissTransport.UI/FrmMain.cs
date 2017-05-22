@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SwissTransport.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace SwissTransport
 {
-    public partial class FrmMain : Form
+    public partial class FrmMain : Form 
     {
         private readonly ITransport mainTransport = new Transport();
 
@@ -78,30 +79,38 @@ namespace SwissTransport
         //With this Button, the Connections from one Station will be showed to the user.
         private void btnTimetable_Click(object sender, EventArgs e)
         {
-            //Again the items and de colums are getting cleared, and new Columns are getting created.
-            ListViewResult.Items.Clear();
-            ListViewResult.Columns.Clear();
-            ListViewResult.Columns.Add("Verkehrsmittel");
-            ListViewResult.Columns.Add("Nach");
-            ListViewResult.Columns.Add("Abfahrt");
-            ListViewResult.Columns.Add("Betreiber");
-            
-
-            //In this section the Departures from one selected station will be calculated.
-            string strAbfahrt = ComboBoxStart.SelectedItem.ToString();
-            string id = mainTransport.GetStations(strAbfahrt).StationList[0].Id;
-            StationBoardRoot sbRoot = mainTransport.GetStationBoard(strAbfahrt, id);
-            //In this loop, the Results for the Departures are getting calculated, and the Items will be wirtten down,
-            //to a string, then, a new ListViewItem is created and will be written down in the ListView.
-            foreach ( StationBoard sb in sbRoot.Entries)
+            try
             {
-                String[] result = { sb.Name, sb.To, sb.Stop.Departure.ToString(), sb.Operator};
-                ListViewItem lvItem = new ListViewItem(result);
-                ListViewResult.Items.Add(lvItem);
+
+                //Again the items and de colums are getting cleared, and new Columns are getting created.
+                ListViewResult.Items.Clear();
+                ListViewResult.Columns.Clear();
+                ListViewResult.Columns.Add("Verkehrsmittel");
+                ListViewResult.Columns.Add("Nach");
+                ListViewResult.Columns.Add("Abfahrt");
+                ListViewResult.Columns.Add("Betreiber");
+
+
+                //In this section the Departures from one selected station will be calculated.
+                string strAbfahrt = ComboBoxStart.SelectedItem.ToString();
+                string id = mainTransport.GetStations(strAbfahrt).StationList[0].Id;
+                StationBoardRoot sbRoot = mainTransport.GetStationBoard(strAbfahrt, id);
+                //In this loop, the Results for the Departures are getting calculated, and the Items will be wirtten down,
+                //to a string, then, a new ListViewItem is created and will be written down in the ListView.
+                foreach (StationBoard sb in sbRoot.Entries)
+                {
+                    String[] result = { sb.Name, sb.To, sb.Stop.Departure.ToString(), sb.Operator };
+                    ListViewItem lvItem = new ListViewItem(result);
+                    ListViewResult.Items.Add(lvItem);
+                }
+                //In the end the Colums are getting auto resized again, for a better view.
+                ListViewResult.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+                ListViewResult.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
-            //In the end the Colums are getting auto resized again, for a better view.
-            ListViewResult.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-            ListViewResult.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            catch(WebException ex)
+            {
+                MessageBox.Show("Zu viele Anfragen an den Server, bitte warten");
+            }
 
         }
         //This Button is responsible to switch the selected Deparute and Arrival Station.
@@ -144,12 +153,22 @@ namespace SwissTransport
         //Here is the Google Maps intergration, it open the Googe Maps URL and attaches the Text from th ComboBox and the additional Text Haltestelle.
         private void BtnGmapsStart_Click(object sender, EventArgs e)
         {
+
+
+            //webBrowser1.Navigate("http://www.google.com/maps/place/" + ComboBoxStart.Text + " Haltestelle");
             System.Diagnostics.Process.Start("http://www.google.com/maps/place/" + ComboBoxStart.Text + " Haltestelle");
         }
 
         private void BtnGmapsEnd_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://www.google.com/maps/place/" + ComboBoxEnd.Text + " Haltestelle");
+            
+            //webBrowser1.Navigate("http://www.google.com/maps/place/" + ComboBoxEnd.Text + " Haltestelle");
+            System.Diagnostics.Process.Start("http://www.google.com/maps/place?&z=15/" + ComboBoxEnd.Text + " Haltestelle");
+        }
+        //"My location" is implemented. Simple, but it works.
+        private void BtnMyLocation_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.google.com/maps/search/" + " Mein Standort");
         }
     }
 }

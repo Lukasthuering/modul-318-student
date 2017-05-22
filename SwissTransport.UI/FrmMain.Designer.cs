@@ -47,6 +47,9 @@ namespace SwissTransport
             this.BtnTimetable = new System.Windows.Forms.Button();
             this.BtnGmapsStart = new System.Windows.Forms.Button();
             this.BtnGmapsEnd = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.BtnMyLocation = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.transportBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +58,7 @@ namespace SwissTransport
             this.ComboBoxStart.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.ComboBoxStart.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.ComboBoxStart.FormattingEnabled = true;
-            this.ComboBoxStart.Location = new System.Drawing.Point(12, 88);
+            this.ComboBoxStart.Location = new System.Drawing.Point(5, 120);
             this.ComboBoxStart.Name = "ComboBoxStart";
             this.ComboBoxStart.Size = new System.Drawing.Size(243, 24);
             this.ComboBoxStart.TabIndex = 0;
@@ -65,7 +68,7 @@ namespace SwissTransport
             // ComboBoxEnd
             // 
             this.ComboBoxEnd.FormattingEnabled = true;
-            this.ComboBoxEnd.Location = new System.Drawing.Point(398, 89);
+            this.ComboBoxEnd.Location = new System.Drawing.Point(421, 120);
             this.ComboBoxEnd.Name = "ComboBoxEnd";
             this.ComboBoxEnd.Size = new System.Drawing.Size(243, 24);
             this.ComboBoxEnd.TabIndex = 1;
@@ -74,15 +77,15 @@ namespace SwissTransport
             // 
             // DateTimeDate
             // 
-            this.DateTimeDate.Location = new System.Drawing.Point(725, 91);
+            this.DateTimeDate.Location = new System.Drawing.Point(756, 89);
             this.DateTimeDate.Name = "DateTimeDate";
-            this.DateTimeDate.Size = new System.Drawing.Size(163, 22);
+            this.DateTimeDate.Size = new System.Drawing.Size(157, 22);
             this.DateTimeDate.TabIndex = 2;
             // 
             // BtnConnections
             // 
             this.BtnConnections.Enabled = false;
-            this.BtnConnections.Location = new System.Drawing.Point(894, 171);
+            this.BtnConnections.Location = new System.Drawing.Point(5, 150);
             this.BtnConnections.Name = "BtnConnections";
             this.BtnConnections.Size = new System.Drawing.Size(157, 43);
             this.BtnConnections.TabIndex = 3;
@@ -93,17 +96,17 @@ namespace SwissTransport
             // DateTimeClock
             // 
             this.DateTimeClock.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.DateTimeClock.Location = new System.Drawing.Point(894, 91);
+            this.DateTimeClock.Location = new System.Drawing.Point(756, 120);
             this.DateTimeClock.Name = "DateTimeClock";
             this.DateTimeClock.ShowUpDown = true;
-            this.DateTimeClock.Size = new System.Drawing.Size(112, 22);
+            this.DateTimeClock.Size = new System.Drawing.Size(157, 22);
             this.DateTimeClock.TabIndex = 4;
             // 
             // BtnSwap
             // 
-            this.BtnSwap.Location = new System.Drawing.Point(317, 74);
+            this.BtnSwap.Location = new System.Drawing.Point(340, 89);
             this.BtnSwap.Name = "BtnSwap";
-            this.BtnSwap.Size = new System.Drawing.Size(75, 56);
+            this.BtnSwap.Size = new System.Drawing.Size(75, 57);
             this.BtnSwap.TabIndex = 6;
             this.BtnSwap.Text = "----->\r\n<-----\r\n";
             this.BtnSwap.UseVisualStyleBackColor = true;
@@ -121,9 +124,9 @@ namespace SwissTransport
             this.clmOperator,
             this.clmarrival,
             this.clmtrack});
-            this.ListViewResult.Location = new System.Drawing.Point(68, 171);
+            this.ListViewResult.Location = new System.Drawing.Point(5, 199);
             this.ListViewResult.Name = "ListViewResult";
-            this.ListViewResult.Size = new System.Drawing.Size(809, 348);
+            this.ListViewResult.Size = new System.Drawing.Size(914, 423);
             this.ListViewResult.TabIndex = 7;
             this.ListViewResult.UseCompatibleStateImageBehavior = false;
             this.ListViewResult.View = System.Windows.Forms.View.Details;
@@ -154,20 +157,22 @@ namespace SwissTransport
             // 
             // BtnTimetable
             // 
+            this.BtnTimetable.BackColor = System.Drawing.Color.Gray;
             this.BtnTimetable.Enabled = false;
-            this.BtnTimetable.Location = new System.Drawing.Point(894, 220);
+            this.BtnTimetable.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BtnTimetable.Location = new System.Drawing.Point(762, 150);
             this.BtnTimetable.Name = "BtnTimetable";
             this.BtnTimetable.Size = new System.Drawing.Size(157, 43);
             this.BtnTimetable.TabIndex = 8;
             this.BtnTimetable.Text = "Fahrplan anzeigen";
-            this.BtnTimetable.UseVisualStyleBackColor = true;
+            this.BtnTimetable.UseVisualStyleBackColor = false;
             this.BtnTimetable.Click += new System.EventHandler(this.btnTimetable_Click);
             // 
             // BtnGmapsStart
             // 
-            this.BtnGmapsStart.Location = new System.Drawing.Point(261, 89);
+            this.BtnGmapsStart.Location = new System.Drawing.Point(254, 89);
             this.BtnGmapsStart.Name = "BtnGmapsStart";
-            this.BtnGmapsStart.Size = new System.Drawing.Size(50, 23);
+            this.BtnGmapsStart.Size = new System.Drawing.Size(80, 57);
             this.BtnGmapsStart.TabIndex = 9;
             this.BtnGmapsStart.Text = "Maps";
             this.BtnGmapsStart.UseVisualStyleBackColor = true;
@@ -175,20 +180,51 @@ namespace SwissTransport
             // 
             // BtnGmapsEnd
             // 
-            this.BtnGmapsEnd.Location = new System.Drawing.Point(647, 90);
+            this.BtnGmapsEnd.Location = new System.Drawing.Point(670, 89);
             this.BtnGmapsEnd.Name = "BtnGmapsEnd";
-            this.BtnGmapsEnd.Size = new System.Drawing.Size(50, 23);
+            this.BtnGmapsEnd.Size = new System.Drawing.Size(80, 57);
             this.BtnGmapsEnd.TabIndex = 10;
             this.BtnGmapsEnd.Text = "Maps";
             this.BtnGmapsEnd.UseVisualStyleBackColor = true;
             this.BtnGmapsEnd.Click += new System.EventHandler(this.BtnGmapsEnd_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 97);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 17);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Starthaltestelle";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(421, 100);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 17);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Endhaltestelle";
+            // 
+            // BtnMyLocation
+            // 
+            this.BtnMyLocation.Location = new System.Drawing.Point(168, 150);
+            this.BtnMyLocation.Name = "BtnMyLocation";
+            this.BtnMyLocation.Size = new System.Drawing.Size(157, 43);
+            this.BtnMyLocation.TabIndex = 13;
+            this.BtnMyLocation.Text = "Mein Standort";
+            this.BtnMyLocation.UseVisualStyleBackColor = true;
+            this.BtnMyLocation.Click += new System.EventHandler(this.BtnMyLocation_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1063, 531);
+            this.BackColor = System.Drawing.Color.Teal;
+            this.ClientSize = new System.Drawing.Size(927, 632);
+            this.Controls.Add(this.BtnMyLocation);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnGmapsEnd);
             this.Controls.Add(this.BtnGmapsStart);
             this.Controls.Add(this.BtnTimetable);
@@ -203,6 +239,7 @@ namespace SwissTransport
             this.Text = "Fahrplan Schweiz";
             ((System.ComponentModel.ISupportInitialize)(this.transportBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -224,5 +261,8 @@ namespace SwissTransport
         private ColumnHeader clmOperator;
         private Button BtnGmapsStart;
         private Button BtnGmapsEnd;
+        private Label label1;
+        private Label label2;
+        private Button BtnMyLocation;
     }
 }
