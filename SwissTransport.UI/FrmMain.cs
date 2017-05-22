@@ -15,7 +15,7 @@ namespace SwissTransport
     public partial class FrmMain : Form 
     {
         private readonly ITransport mainTransport = new Transport();
-
+        private DateTime Date;
         public FrmMain()
         {
             InitializeComponent();
@@ -137,6 +137,7 @@ namespace SwissTransport
             {
                 BtnConnections.Enabled = false;
                 BtnTimetable.Enabled = true;
+                BtnGmapsStart.Enabled = true;
             }
             
         }
@@ -148,6 +149,8 @@ namespace SwissTransport
             {
                 BtnConnections.Enabled = true;
                 BtnTimetable.Enabled = false;
+                BtnGmapsEnd.Enabled = true;
+
             }
         }
         //Here is the Google Maps intergration, it open the Googe Maps URL and attaches the Text from th ComboBox and the additional Text Haltestelle.
@@ -165,11 +168,13 @@ namespace SwissTransport
             //webBrowser1.Navigate("http://www.google.com/maps/place/" + ComboBoxEnd.Text + " Haltestelle");
             System.Diagnostics.Process.Start("http://www.google.com/maps/place?&z=15/" + ComboBoxEnd.Text + " Haltestelle");
         }
-        //"My location" is implemented. Simple, but it works.
+            //"My location" is implemented. Simple, but it works.
         private void BtnMyLocation_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("http://www.google.com/maps/search/" + " Mein Standort");
         }
+
+        
     }
 }
 

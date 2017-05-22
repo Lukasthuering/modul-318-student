@@ -77,7 +77,7 @@ namespace SwissTransport
             // 
             // DateTimeDate
             // 
-            this.DateTimeDate.Location = new System.Drawing.Point(756, 89);
+            this.DateTimeDate.Location = new System.Drawing.Point(762, 89);
             this.DateTimeDate.Name = "DateTimeDate";
             this.DateTimeDate.Size = new System.Drawing.Size(157, 22);
             this.DateTimeDate.TabIndex = 2;
@@ -96,7 +96,7 @@ namespace SwissTransport
             // DateTimeClock
             // 
             this.DateTimeClock.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.DateTimeClock.Location = new System.Drawing.Point(756, 120);
+            this.DateTimeClock.Location = new System.Drawing.Point(762, 120);
             this.DateTimeClock.Name = "DateTimeClock";
             this.DateTimeClock.ShowUpDown = true;
             this.DateTimeClock.Size = new System.Drawing.Size(157, 22);
@@ -170,9 +170,10 @@ namespace SwissTransport
             // 
             // BtnGmapsStart
             // 
+            this.BtnGmapsStart.Enabled = false;
             this.BtnGmapsStart.Location = new System.Drawing.Point(254, 89);
             this.BtnGmapsStart.Name = "BtnGmapsStart";
-            this.BtnGmapsStart.Size = new System.Drawing.Size(80, 57);
+            this.BtnGmapsStart.Size = new System.Drawing.Size(71, 57);
             this.BtnGmapsStart.TabIndex = 9;
             this.BtnGmapsStart.Text = "Maps";
             this.BtnGmapsStart.UseVisualStyleBackColor = true;
@@ -180,9 +181,10 @@ namespace SwissTransport
             // 
             // BtnGmapsEnd
             // 
+            this.BtnGmapsEnd.Enabled = false;
             this.BtnGmapsEnd.Location = new System.Drawing.Point(670, 89);
             this.BtnGmapsEnd.Name = "BtnGmapsEnd";
-            this.BtnGmapsEnd.Size = new System.Drawing.Size(80, 57);
+            this.BtnGmapsEnd.Size = new System.Drawing.Size(71, 57);
             this.BtnGmapsEnd.TabIndex = 10;
             this.BtnGmapsEnd.Text = "Maps";
             this.BtnGmapsEnd.UseVisualStyleBackColor = true;
