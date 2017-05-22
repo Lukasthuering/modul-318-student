@@ -237,6 +237,9 @@ namespace SwissTransport
             this.Controls.Add(this.DateTimeDate);
             this.Controls.Add(this.ComboBoxEnd);
             this.Controls.Add(this.ComboBoxStart);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmMain";
             this.Text = "Fahrplan Schweiz";
             ((System.ComponentModel.ISupportInitialize)(this.transportBindingSource)).EndInit();
