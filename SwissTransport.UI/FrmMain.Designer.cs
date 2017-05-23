@@ -86,13 +86,14 @@ namespace SwissTransport
             // 
             // BtnConnections
             // 
+            this.BtnConnections.BackColor = System.Drawing.Color.White;
             this.BtnConnections.Enabled = false;
             this.BtnConnections.Location = new System.Drawing.Point(5, 150);
             this.BtnConnections.Name = "BtnConnections";
             this.BtnConnections.Size = new System.Drawing.Size(157, 43);
             this.BtnConnections.TabIndex = 3;
             this.BtnConnections.Text = "Verbindung suchen";
-            this.BtnConnections.UseVisualStyleBackColor = true;
+            this.BtnConnections.UseVisualStyleBackColor = false;
             this.BtnConnections.Click += new System.EventHandler(this.BtnConnections_Click);
             // 
             // DateTimeClock
@@ -106,12 +107,13 @@ namespace SwissTransport
             // 
             // BtnSwap
             // 
+            this.BtnSwap.BackColor = System.Drawing.Color.White;
             this.BtnSwap.Location = new System.Drawing.Point(340, 89);
             this.BtnSwap.Name = "BtnSwap";
             this.BtnSwap.Size = new System.Drawing.Size(75, 57);
             this.BtnSwap.TabIndex = 6;
             this.BtnSwap.Text = "----->\r\n<-----\r\n";
-            this.BtnSwap.UseVisualStyleBackColor = true;
+            this.BtnSwap.UseVisualStyleBackColor = false;
             this.BtnSwap.Click += new System.EventHandler(this.btnswap_Click);
             // 
             // transportBindingSource
@@ -159,7 +161,7 @@ namespace SwissTransport
             // 
             // BtnTimetable
             // 
-            this.BtnTimetable.BackColor = System.Drawing.Color.Gray;
+            this.BtnTimetable.BackColor = System.Drawing.Color.White;
             this.BtnTimetable.Enabled = false;
             this.BtnTimetable.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BtnTimetable.Location = new System.Drawing.Point(762, 150);
@@ -172,24 +174,26 @@ namespace SwissTransport
             // 
             // BtnGmapsStart
             // 
+            this.BtnGmapsStart.BackColor = System.Drawing.Color.White;
             this.BtnGmapsStart.Enabled = false;
             this.BtnGmapsStart.Location = new System.Drawing.Point(254, 89);
             this.BtnGmapsStart.Name = "BtnGmapsStart";
             this.BtnGmapsStart.Size = new System.Drawing.Size(71, 57);
             this.BtnGmapsStart.TabIndex = 9;
             this.BtnGmapsStart.Text = "Maps";
-            this.BtnGmapsStart.UseVisualStyleBackColor = true;
+            this.BtnGmapsStart.UseVisualStyleBackColor = false;
             this.BtnGmapsStart.Click += new System.EventHandler(this.BtnGmapsStart_Click);
             // 
             // BtnGmapsEnd
             // 
+            this.BtnGmapsEnd.BackColor = System.Drawing.Color.White;
             this.BtnGmapsEnd.Enabled = false;
             this.BtnGmapsEnd.Location = new System.Drawing.Point(670, 89);
             this.BtnGmapsEnd.Name = "BtnGmapsEnd";
             this.BtnGmapsEnd.Size = new System.Drawing.Size(71, 57);
             this.BtnGmapsEnd.TabIndex = 10;
             this.BtnGmapsEnd.Text = "Maps";
-            this.BtnGmapsEnd.UseVisualStyleBackColor = true;
+            this.BtnGmapsEnd.UseVisualStyleBackColor = false;
             this.BtnGmapsEnd.Click += new System.EventHandler(this.BtnGmapsEnd_Click);
             // 
             // label1
@@ -212,12 +216,13 @@ namespace SwissTransport
             // 
             // BtnMyLocation
             // 
+            this.BtnMyLocation.BackColor = System.Drawing.Color.White;
             this.BtnMyLocation.Location = new System.Drawing.Point(168, 150);
             this.BtnMyLocation.Name = "BtnMyLocation";
             this.BtnMyLocation.Size = new System.Drawing.Size(157, 43);
             this.BtnMyLocation.TabIndex = 13;
             this.BtnMyLocation.Text = "Mein Standort";
-            this.BtnMyLocation.UseVisualStyleBackColor = true;
+            this.BtnMyLocation.UseVisualStyleBackColor = false;
             this.BtnMyLocation.Click += new System.EventHandler(this.BtnMyLocation_Click);
             // 
             // FrmMain
