@@ -20,6 +20,7 @@ namespace SwissTransport
             InitializeComponent();
         }
 
+        //Form-Load, items which are loaded, when the form is loaded.
         private void FrmMain_Load(object sender, EventArgs e)
         {
             this.DateTimeClock.Format = DateTimePickerFormat.Time;
