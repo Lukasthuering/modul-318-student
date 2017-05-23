@@ -31,6 +31,7 @@ namespace SwissTransport
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.ComboBoxStart = new System.Windows.Forms.ComboBox();
             this.ComboBoxEnd = new System.Windows.Forms.ComboBox();
             this.DateTimeDate = new System.Windows.Forms.DateTimePicker();
@@ -239,6 +240,7 @@ namespace SwissTransport
             this.Controls.Add(this.ComboBoxEnd);
             this.Controls.Add(this.ComboBoxStart);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmMain";
