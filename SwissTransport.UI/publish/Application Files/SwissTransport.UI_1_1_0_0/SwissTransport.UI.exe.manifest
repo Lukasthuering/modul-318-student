@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="SwissTransport.UI.exe" version="1.1.0.0" publicKeyToken="5a1a315d71d22c53" language="en-US" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="AWT-Train.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="SwissTransport.UI" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="SwissTransport.UI.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="521216">
+      <assemblyIdentity name="Newtonsoft.Json" version="8.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>pxPak1priJ2uuVQcJHuP5s1NzcMXy4Zijb95yNL0d48=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SwissTransport.dll" size="11776">
+      <assemblyIdentity name="SwissTransport" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>9gJ8x9cMVoaE+MomKwTcsO5sA+94QyJezungI3sFsQg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SwissTransport.UI.exe" size="487392">
+      <assemblyIdentity name="SwissTransport.UI" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>MorMdANtsnpDTfTs77auzVp3oNj+nx9b1SzmwCG0zUs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="AWT-Train.ico" size="99678">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ukU1bpJwzu3j0fNR7FA08SnXf/8rXpe0JJaa4OhOttU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="SwissTransport.UI.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>6N7MliNbVJSIAIPrecIshMbZ7zEoKLr5SQvud4LDUOw=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-9UVUA1E\Lukas" issuerKeyHash="3c9c5dce264e5dcdb3f036694a0acd5a08c294fb" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>XMZufFwzL2sc4dDuLtw++l6RG+wj207noXPgDZmtUGI=</DigestValue></Reference></SignedInfo><SignatureValue>oRqbkf7IOP8xHiw887YPvwD/QnbV7KAV1x9D4Zl0qBe3F/7iE90SHZCyjHOkyD/IkNF0IuhYW7/QOusZbxULSrsksTBW8PGeZyqBfwDnUWbaWb+uliiRwQdHa9sYMR1hBWDybPigZfgPhhob0w47x0WaRDK8YnaO2zOelQ0DkO0=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>4mn6fVhld/cAjms1kvFGoVcwwsly/v65hSRIMnnuTtJMBcp/CPQmfKyymvifGJvXUNNMEI8XtKE/RYqIofaNmZRVrx9MWD9WOt37oIcAZBxrhvwDU/289chTT5RqYn1TrRlbKZces5oDu7NvKDqiJHcXSIyA2HgqWUAmP+zdSJs=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="6250ad990de073a1e74edb23ec1b915efa3edc2eeed0e11c6b2f335c7c6ec65c" Description="" Url=""><as:assemblyIdentity name="SwissTransport.UI.exe" version="1.1.0.0" publicKeyToken="5a1a315d71d22c53" language="en-US" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-9UVUA1E\Lukas</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>enGFgb/lxO4ca4gQtb1XH0FBSP5lZWTZgEiWs9/cxIk=</DigestValue></Reference></SignedInfo><SignatureValue>A+CQy2aOnJElP5LcfHsk6AM/otLxrTBnt8Ww6CXWvF3IKnDgDHyP0CMCBakefXozhLfaSh7zCWkObwT+ceu3HhuYR+99ro+i60g3E/A2PcsFDlWOq60ryEVF1L/Br0kIMOE31OYBWe3CJLUh/w3wN4p5myhZTgPKGP1WsSD4zsE=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>4mn6fVhld/cAjms1kvFGoVcwwsly/v65hSRIMnnuTtJMBcp/CPQmfKyymvifGJvXUNNMEI8XtKE/RYqIofaNmZRVrx9MWD9WOt37oIcAZBxrhvwDU/289chTT5RqYn1TrRlbKZces5oDu7NvKDqiJHcXSIyA2HgqWUAmP+zdSJs=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQd+65hCYNdpBGT9VtFQkeLzANBgkqhkiG9w0BAQsFADA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtADkAVQBWAFUAQQAxAEUAXABMAHUAawBhAHMwHhcNMTcwNTIzMDkyMDI4WhcNMTgwNTIzMTUyMDI4WjA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtADkAVQBWAFUAQQAxAEUAXABMAHUAawBhAHMwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAOJp+n1YZXf3AI5rNZLxRqFXMMLJcv7+uYUkSDJ57k7STAXKfwj0Jnysspr4nxib11DTTBCPF7ShP0WKiKH2jZmUVa8fTFg/Vjrd+6CHAGQca4b8A1P9vPXIU0+UamJ9U60ZWymXHrOaA7uzbyg6oiR3F0iMgNh4KllAJj/s3UibAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAE5EBCPiX5dee4gVnKLUfuuQDc/UF7mLjogbAlZO7Agds6CtXIqlw45C3Z/EMh3GzN967YjymSoVU9X7+cMBMVEhnWf4ZNraEVEmYGFdpTH8HPbbBXcCPNbFcSM1IdaT1ZA/kbGHh6fLVJ0Kff8pEeiSEdUvbCZHP8SgukVs7Ggw=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
