@@ -25,6 +25,8 @@ namespace SwissTransport
             this.DateTimeClock.Format = DateTimePickerFormat.Time;
         }
 
+#region Connections
+
         //This event controls the actions, if the Button "Verbindung suchen" is clicked.
         private void BtnConnections_Click(object sender, EventArgs e)
         {
@@ -67,6 +69,10 @@ namespace SwissTransport
             }
         }
 
+        #endregion
+
+#region GetStations
+
         //In this code section the Stations will be written down to the Comboboxes.
         private void ComboBoxStartStop_DropDown(object sender, EventArgs e)
         {
@@ -80,8 +86,13 @@ namespace SwissTransport
             {
                 comboboxload.Items.Add(station.Name);
             }
-            
+
+
+
         }
+        #endregion
+
+#region Departure Board
         //With this Button, the Connections from one Station will be showed to the user.
         private void btnTimetable_Click(object sender, EventArgs e)
         {
@@ -122,6 +133,9 @@ namespace SwissTransport
             }
 
         }
+        #endregion
+
+#region switch Button
         //This Button is responsible to switch the selected Deparute and Arrival Station.
         private void btnswap_Click(object sender, EventArgs e)
         {
@@ -135,7 +149,12 @@ namespace SwissTransport
             ComboBoxStart.Text = ComboBoxEnd.Text;
             ComboBoxEnd.Text = from;
             return;
+
         }
+
+        #endregion
+
+#region Disable/Enable Buttons
         //This Event tests if there is Text in the Combobox, if theres Text in the ComboBoxStart, the Connections Button will be disabled,
         //and the Timetable Button ist getting enabled.
         private void ComboBoxStart_TextChanged(object sender, EventArgs e)
@@ -162,28 +181,28 @@ namespace SwissTransport
 
             }
         }
-        //Here is the Google Maps intergration, it open the Googe Maps URL and attaches the Text from th ComboBox and the additional Text "Haltestelle".
+        #endregion
+
+#region Google Maps
         private void BtnGmapsStart_Click(object sender, EventArgs e)
         {
-
-
-            
+            //This Command open Google Maps and searches for the Item which is selected in the ComboBox and the additional Text "Haltestele" to find the correct Station.
             System.Diagnostics.Process.Start("http://www.google.com/maps/place/" + ComboBoxStart.Text + " Haltestelle");
         }
 
         private void BtnGmapsEnd_Click(object sender, EventArgs e)
         {
-            
-           
+            //This Command open Google Maps and searches for the Item which is selected in the ComboBox and the additional Text "Haltestele" to find the correct Station.
             System.Diagnostics.Process.Start("http://www.google.com/maps/place/" + ComboBoxEnd.Text + " Haltestelle");
         }
-            //"My location" is implemented. Simple, but it works.
+
+        //"My location" is implemented. Simple, but it works.
         private void BtnMyLocation_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("http://www.google.com/maps/search/" + " Mein Standort");
         }
+#endregion
 
-        
     }
 }
 
