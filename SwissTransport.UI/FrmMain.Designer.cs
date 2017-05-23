@@ -77,6 +77,7 @@ namespace SwissTransport
             // 
             // DateTimeDate
             // 
+            this.DateTimeDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DateTimeDate.Location = new System.Drawing.Point(762, 89);
             this.DateTimeDate.Name = "DateTimeDate";
             this.DateTimeDate.Size = new System.Drawing.Size(157, 22);
@@ -242,6 +243,7 @@ namespace SwissTransport
             this.MinimizeBox = false;
             this.Name = "FrmMain";
             this.Text = "Fahrplan Schweiz";
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.transportBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

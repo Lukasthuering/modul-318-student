@@ -19,10 +19,14 @@ namespace SwissTransport
         {
             InitializeComponent();
         }
-        
 
-    //This event controls the actions, if the Button "Verbindung suchen" is clicked.
-    private void BtnConnections_Click(object sender, EventArgs e)
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            this.DateTimeClock.Format = DateTimePickerFormat.Time;
+        }
+
+        //This event controls the actions, if the Button "Verbindung suchen" is clicked.
+        private void BtnConnections_Click(object sender, EventArgs e)
         {
             //The items and columns in the ListView will be cleared if the button is clicked. Also 4 new Colums are getting created.
             //The Event .Items.Clear and .Colums.Clear, deletes eery item and every Column in the ListView.
@@ -42,17 +46,20 @@ namespace SwissTransport
             //Now the foreach loop calculates the connections between the two stations, which are selected by the user.
 
             SwissTransport.Transport transport = new SwissTransport.Transport();
-            var foundConnections = transport.GetConnections(ComboBoxStart.Text, ComboBoxEnd.Text);
+            DateTime dtDate = this.DateTimeDate.Value;
+            DateTime dtTime = this.DateTimeClock.Value;
+            //var foundConnections = transport.GetConnections(ComboBoxStart.Text, ComboBoxEnd.Text, dtDate, dtTime);
             ListViewResult.Items.Clear();
-            foreach (Connection conn in transport.GetConnections(ComboBoxStart.Text, ComboBoxEnd.Text).ConnectionList)
+            foreach (Connection conn in transport.GetConnections(ComboBoxStart.Text, ComboBoxEnd.Text, dtDate, dtTime).ConnectionList)
+
             {
                 //The Date and the Time is geting parsed from the Depature and Arrival time.
                 //After this step, the string for the ListView is getting created. the Values for the connection are saved in the string now.
                 //Then, the String is added to the Listview with the .Items.Add(lvitem)
                 //In the end the Colums are getting auto resized, for a better view.
-                DateTime departure = DateTime.Parse(conn.From.Departure);
-                DateTime arrival = DateTime.Parse(conn.To.Arrival);
-                String[] item = { conn.From.Platform, departure.ToString(), conn.Duration, arrival.ToString()};
+                DateTime dtDeparture = DateTime.Parse(conn.From.Departure);
+                DateTime dtArrival = DateTime.Parse(conn.To.Arrival);
+                String[] item = { conn.From.Platform, dtDeparture.ToString(), conn.Duration, dtArrival.ToString()};
                 ListViewItem lvitem = new ListViewItem(item);
                 ListViewResult.Items.Add(lvitem);
                 ListViewResult.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
@@ -68,7 +75,7 @@ namespace SwissTransport
             SwissTransport.Transport transport = new SwissTransport.Transport();
             var foundStations = transport.GetStations(comboboxload.Text);
 
-            //Every station, that is found, is written down in the che^ckbox.
+            //Every station, that is found, is written down in the checkbox.
             foreach (var station in foundStations.StationList)
             {
                 comboboxload.Items.Add(station.Name);
@@ -92,9 +99,11 @@ namespace SwissTransport
                 DateTime dtTime = this.DateTimeClock.Value;
 
                 //In this section the Departures from one selected station will be calculated.
+                DateTime DtDate = this.DateTimeDate.Value;
+                DateTime DtTime = this.DateTimeClock.Value;
                 string strAbfahrt = ComboBoxStart.SelectedItem.ToString();
                 string id = mainTransport.GetStations(strAbfahrt).StationList[0].Id;
-                StationBoardRoot sbRoot = mainTransport.GetStationBoard(strAbfahrt, id);
+                StationBoardRoot sbRoot = mainTransport.GetStationBoard(strAbfahrt, id, dtDate, dtTime);
                 //In this loop, the Results for the Departures are getting calculated, and the Items will be wirtten down,
                 //to a string, then, a new ListViewItem is created and will be written down in the ListView.
                 foreach (StationBoard sb in sbRoot.Entries)
@@ -107,9 +116,9 @@ namespace SwissTransport
                 ListViewResult.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
                 ListViewResult.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
-            catch(WebException ex)
+            catch
             {
-                MessageBox.Show("Zu viele Anfragen an den Server, bitte warten");
+               
             }
 
         }
@@ -153,19 +162,19 @@ namespace SwissTransport
 
             }
         }
-        //Here is the Google Maps intergration, it open the Googe Maps URL and attaches the Text from th ComboBox and the additional Text Haltestelle.
+        //Here is the Google Maps intergration, it open the Googe Maps URL and attaches the Text from th ComboBox and the additional Text "Haltestelle".
         private void BtnGmapsStart_Click(object sender, EventArgs e)
         {
 
 
-            //webBrowser1.Navigate("http://www.google.com/maps/place/" + ComboBoxStart.Text + " Haltestelle");
+            
             System.Diagnostics.Process.Start("http://www.google.com/maps/place/" + ComboBoxStart.Text + " Haltestelle");
         }
 
         private void BtnGmapsEnd_Click(object sender, EventArgs e)
         {
             
-            //webBrowser1.Navigate("http://www.google.com/maps/place/" + ComboBoxEnd.Text + " Haltestelle");
+           
             System.Diagnostics.Process.Start("http://www.google.com/maps/place/" + ComboBoxEnd.Text + " Haltestelle");
         }
             //"My location" is implemented. Simple, but it works.
